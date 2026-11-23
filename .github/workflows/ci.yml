@@ -1,0 +1,28 @@
+# Workflow：.github/workflows/ に置いたYAMLが自動で認識される
+name: CI
+
+# Event（トリガー）
+on:
+  push:
+    branches: [main]
+  pull_request:          # PRを作る・更新すると実行される
+  workflow_dispatch:     # Actionsタブから手動で実行できる
+
+jobs:
+  # Job（複数あるとデフォルトで並列実行）
+  test:
+    runs-on: ubuntu-latest   # Runner（GitHubホスト型）
+    steps:
+      - uses: actions/checkout@v4        # Action（Marketplaceの部品）
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: テストを実行             # Step
+        run: python -m unittest discover -s tests -v
+
+  # needs: を付けると test の完了後に実行される（順番に実行）
+  report:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "テストが通りました"

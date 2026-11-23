@@ -1,0 +1,23 @@
+# YAMLで書くと「Issueフォーム」になる（入力欄つき）
+name: バグ報告
+description: 不具合を報告する
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: 何が起きたか
+      placeholder: 例）subtract(10, 3) が 13 を返す
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する結果
+      placeholder: 例）7 を返す
+  - type: dropdown
+    id: severity
+    attributes:
+      label: 重要度
+      options: ["高", "中", "低"]

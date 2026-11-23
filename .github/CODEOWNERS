@@ -1,0 +1,7 @@
+# 書式：<パス> <オーナー>
+# 該当ファイルを変更するPRが作られると、オーナーがレビュアーに自動で指定される
+# ※ YOUR_USERNAME を自分のGitHubユーザー名に置き換えてください
+
+*            @YOUR_USERNAME
+/src/        @YOUR_USERNAME
+/.github/    @YOUR_USERNAME
