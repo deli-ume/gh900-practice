@@ -18,8 +18,8 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.divide(6, 3), 2)
 
     # 演習2：ここに subtract のテストを追加する
-    # def test_subtract(self):
-    #     self.assertEqual(calc.subtract(10, 3), 7)
+    def test_subtract(self):
+        self.assertEqual(calc.subtract(10, 3), 7)
 
 
 if __name__ == "__main__":

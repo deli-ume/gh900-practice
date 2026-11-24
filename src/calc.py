@@ -7,7 +7,7 @@ def add(a, b):
 
 def subtract(a, b):
     # バグ：引き算なのに足し算になっている
-    return a + b
+    return a - b
 
 
 def multiply(a, b):
